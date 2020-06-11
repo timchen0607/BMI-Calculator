@@ -1,0 +1,48 @@
+@mixin mobile() {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin pad() {
+  @media only screen and (max-width: 1023px) {
+    @content;
+  }
+}
+
+.container {
+  width: 95vw;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.content {
+  padding: 3em 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.input-group {
+  & > label {
+    padding: 0.2em 0;
+    display: block;
+    color: $mainColor;
+  }
+  & > input {
+    margin: 0 0 0.6em;
+    padding: 0.3em;
+    color: $mainColor;
+    background-color: #646464;
+    border: 2px solid $mainColor;
+    border-radius: 10px;
+    font-size: 1.3em;
+
+    &::placeholder {
+      font-family: Microsoft JhengHei;
+      color: #ffffff80;
+    }
+  }
+}
+
+.header {
+  background-color: #424242;
+}
