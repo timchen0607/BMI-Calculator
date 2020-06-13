@@ -15,17 +15,7 @@
   max-width: 1000px;
   margin: 0 auto;
 }
-.content {
-  padding: 3.5em 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 
-  @include mobile() {
-    height: calc(100vh - 7em);
-    flex-wrap: wrap;
-  }
-}
 .input-group {
   & > label {
     padding: 0.3em 0;
@@ -60,6 +50,18 @@
 .header {
   background-color: #424242;
 
+  .content {
+    padding: 3.5em 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    @include mobile() {
+      height: calc(100vh - 7em);
+      flex-wrap: wrap;
+    }
+  }
+
   #calculator {
     font-family: Microsoft JhengHei;
     display: block;
@@ -83,5 +85,16 @@
     &:active {
       background-color: #dea821;
     }
+  }
+}
+
+.footer {
+  background-color: $mainColor;
+
+  .content {
+    padding: 1em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
