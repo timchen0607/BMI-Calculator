@@ -16,33 +16,72 @@
   margin: 0 auto;
 }
 .content {
-  padding: 3em 0;
+  padding: 3.5em 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  @include mobile() {
+    height: calc(100vh - 7em);
+    flex-wrap: wrap;
+  }
 }
 .input-group {
   & > label {
-    padding: 0.2em 0;
+    padding: 0.3em 0;
     display: block;
     color: $mainColor;
   }
   & > input {
     margin: 0 0 0.6em;
-    padding: 0.3em;
+    padding: 0.3em 0.5em;
     color: $mainColor;
     background-color: #646464;
+    caret-color: $mainColor;
     border: 2px solid $mainColor;
     border-radius: 10px;
     font-size: 1.3em;
 
+    &:focus {
+      outline: none;
+    }
     &::placeholder {
       font-family: Microsoft JhengHei;
       color: #ffffff80;
+    }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
   }
 }
 
 .header {
   background-color: #424242;
+
+  #calculator {
+    font-family: Microsoft JhengHei;
+    display: block;
+    width: 120px;
+    height: 120px;
+    color: $subColor;
+    font-size: 1.3em;
+    font-weight: bold;
+    background-color: $mainColor;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      transition: 0.3s;
+      box-shadow: 0 1px 6px 3px #ffc43294;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      background-color: #dea821;
+    }
+  }
 }
