@@ -12,10 +12,23 @@
 
 .container {
   width: 95vw;
-  max-width: 1000px;
+  max-width: 800px;
   margin: 0 auto;
 }
+.text-sm {
+  font-size: 0.6em;
+}
+.d-sm-none {
+  @include mobile() {
+    display: none;
+  }
+}
 
+article {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+}
 .input-group {
   & > label {
     padding: 0.3em 0;
@@ -23,6 +36,7 @@
     color: $mainColor;
   }
   & > input {
+    width: 100%;
     margin: 0 0 0.6em;
     padding: 0.3em 0.5em;
     color: $mainColor;
@@ -31,6 +45,7 @@
     border: 2px solid $mainColor;
     border-radius: 10px;
     font-size: 1.3em;
+    box-sizing: border-box;
 
     &:focus {
       outline: none;
@@ -48,17 +63,22 @@
 }
 
 .header {
-  background-color: #424242;
+  background-color: $subColor;
 
   .content {
     padding: 3.5em 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    box-sizing: border-box;
 
     @include mobile() {
-      height: calc(100vh - 7em);
-      flex-wrap: wrap;
+      height: 100vh;
+      flex-flow: column;
+    }
+
+    .form {
+      min-width: 280px;
     }
   }
 
@@ -88,7 +108,64 @@
   }
 }
 
+.history {
+  margin: 2.6em 0;
+  color: $subColor;
+
+  .title {
+    text-align: center;
+    font-size: 1.3em;
+  }
+  #clearHistory {
+    font-family: Microsoft JhengHei;
+    display: block;
+    margin: 1em auto;
+    padding: 0.3em 0.5em;
+    color: $subColor;
+    font-size: 0.8em;
+    font-weight: bold;
+    background-color: $mainColor;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    &:hover {
+      background-color: #dea821;
+    }
+  }
+  .content {
+    margin: 2em 0;
+  }
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+    padding: 1.4em 0.7em;
+    background-color: #ffffff;
+
+    &.obese {
+      border-left: 0.4em solid $obese;
+    }
+    &.overweight {
+      border-left: 0.4em solid $overweight;
+    }
+    &.chubby {
+      border-left: 0.4em solid $chubby;
+    }
+    &.plump {
+      border-left: 0.4em solid $plump;
+    }
+    &.fit {
+      border-left: 0.4em solid $fit;
+    }
+    &.skinny {
+      border-left: 0.4em solid $skinny;
+    }
+  }
+}
+
 .footer {
+  margin-top: auto;
   background-color: $mainColor;
 
   .content {

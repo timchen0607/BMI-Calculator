@@ -13,12 +13,13 @@
         <div class="container">
           <div class="content">
             <img src="./images/BMILogo.png" alt="BMI Calculator" />
-            <div>
+            <div class="form">
               <div class="input-group">
                 <label for="height">身高 cm</label>
                 <input
                   type="number"
                   id="height"
+                  min="100"
                   max="999"
                   placeholder="請輸入身高"
                   required
@@ -29,7 +30,8 @@
                 <input
                   type="number"
                   id="weight"
-                  max="999"
+                  min="30"
+                  max="300"
                   placeholder="請輸入體重"
                   required
                 />
@@ -39,18 +41,11 @@
           </div>
         </div>
       </header>
-      <section class="">
+      <section class="history">
         <div class="container">
-          <h2>BMI 紀錄</h2>
-          <ul>
-            <li>
-              <div>理想</div>
-              <div><span></span><span></span></div>
-              <div><span></span><span></span></div>
-              <div><span></span><span></span></div>
-              <div><span></span><span></span></div>
-            </li>
-          </ul>
+          <h2 class="title">BMI 紀錄</h2>
+          <button id="clearHistory">清除紀錄</button>
+          <ul class="content"></ul>
         </div>
       </section>
       <footer class="footer">
