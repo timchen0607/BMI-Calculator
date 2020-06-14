@@ -26,6 +26,14 @@
       };
       console.log(bmiList);
       // addNewItem(newItem);
+    } else {
+      var flag = true;
+      document.querySelectorAll(".header input").forEach(function (item) {
+        if (flag) {
+          item.reportValidity();
+          flag = item.reportValidity();
+        }
+      });
     }
   });
 })();
